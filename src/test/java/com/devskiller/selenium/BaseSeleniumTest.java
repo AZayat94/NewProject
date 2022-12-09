@@ -1,5 +1,6 @@
 package com.devskiller.selenium;
 
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -11,6 +12,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseSeleniumTest {
 
+  @Rule
+  public WireMockRule wireMockRule = new WireMockRule(8089);
 
   protected WebDriver webDriver;
 
